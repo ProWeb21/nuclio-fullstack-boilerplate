@@ -1,0 +1,24 @@
+
+
+body {
+}
+
+.__home_posts_wrapper{
+  display: flex ;
+  flex-direction: column ;
+  flex-wrap: wrap;
+  max-width: 80vw;
+  height: 15000px;
+  
+}
+
+.__home_post {
+  
+}
+
+.__home_post_item {
+  flex: 1 0 auto;
+  width: 17%;
+  padding: .5em;
+  margin: .2em;
+    }
