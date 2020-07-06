@@ -5,12 +5,7 @@ import PinCard from "../../components/pinCard/pinCard.view";
 const Home = () => {
 
   const  urls = [
-    "https://placekitten.com/450/320",
-    "https://placekitten.com/450/240",
-    "https://placekitten.com/450/280",
-    "https://placekitten.com/450/200",
-    "https://placekitten.com/450/400",
-    "https://placekitten.com/450/280",
+   
   "https://picsum.photos/450/280?image=300" ,
   "https://picsum.photos/450/325?image=100" ,
   "https://picsum.photos/450/540?image=400" ,

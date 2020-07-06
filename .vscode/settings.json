@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "laravel",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "nuclio",
+            "password": "c0c010c0",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
