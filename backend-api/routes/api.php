@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -11,33 +13,6 @@
 |
 */
 
-/*
-|--------------------------------------------------------------------------
-| User Routes
-|--------------------------------------------------------------------------
-*/
-
-Route::get('users', 'UserController@all');
-Route::get('users/{id}', 'UserController@getById');
-Route::get('users/email/{email}', 'UserController@getByEmail');
-Route::get('users/username/{username}', 'UserController@getByUsername');
-
-/*
-|--------------------------------------------------------------------------
-| Board Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('boards', 'BoardController@all');
-Route::get('boards/{id}', 'BoardController@getById');
-Route::get('boards/user/{userId}', 'BoardController@getByUser');
-Route::post('boards', 'BoardController@create');
-
-/*
-|--------------------------------------------------------------------------
-| Pin Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('pins', 'PinController@all');
-Route::get('pins/{id}', 'PinController@getById');
-Route::get('pins/board/{boardId}', 'PinController@GetByBoard');
-// Route::post('pins', 'PinController@create');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});

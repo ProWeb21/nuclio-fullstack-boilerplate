@@ -6,8 +6,8 @@
             "mysqlOptions": {
                 "authProtocol": "default"
             },
-            "name": "nuclio",
-            "password": "c0c010c0",
+            "name": "Nuclio",
+            "password": "Kar3lapp3l",
             "port": 3306,
             "previewLimit": 50,
             "server": "localhost",
