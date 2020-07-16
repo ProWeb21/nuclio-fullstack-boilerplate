@@ -22,7 +22,7 @@ const PinCard = ({description, image_url, name }) => {
         </div>
     )
 }
-
+ 
 PinCard.propTypes = {
     description: PropTypes.string.isRequired,
     image_url: PropTypes.string.isRequired,

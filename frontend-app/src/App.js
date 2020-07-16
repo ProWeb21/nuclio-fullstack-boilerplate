@@ -1,14 +1,21 @@
 import React from 'react';
 import Home from "./pages/home/home.view";
-import style from './pages/home/home.module.css'
+import Navbar from './components/Navbar'
 
 function App() {
+
+
+
+
+  
   return (
     <body>
-        <div className={style.__home_posts_wrapper } >
-            <Home />
-          </div>
+      <div>
+        <input type="text" value="hola mundo"/>
+        <Home />
+      </div>
     </body>
+   
   );
 }
 

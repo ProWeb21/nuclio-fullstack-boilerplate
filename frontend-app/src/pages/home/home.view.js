@@ -1,172 +1,58 @@
-import React from 'react';
-import styles from './home.module.css';
-import PinCard from "../../components/pinCard/pinCard.view";
+import React, {useState} from 'react';
 
 const Home = () => {
 
-  const  urls = [
-   
-  "https://picsum.photos/450/280?image=300" ,
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161", 
-  "https://picsum.photos/450/400?image=175", 
-  "https://picsum.photos/450/300?image=200", 
-  "https://picsum.photos/450/280?image=225", 
-  "https://picsum.photos/450/480?image=250", 
-  "https://picsum.photos/450/550?image=275", 
-  "https://picsum.photos/450/600?image=300", 
-  "https://picsum.photos/450/325?image=13" ,
-  "https://picsum.photos/450/450?image=26" ,
-  "https://picsum.photos/450/280?image=39" ,
-  "https://picsum.photos/450/540?image=52" ,
-  "https://picsum.photos/450/380?image=65" ,
-  "https://picsum.photos/450/300?image=78",
-  "https://picsum.photos/450/280?image=300" ,
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161", 
-  "https://picsum.photos/450/400?image=175", 
-  "https://picsum.photos/450/300?image=200", 
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161", 
-  "https://picsum.photos/450/400?image=175", 
-  "https://picsum.photos/450/300?image=200", 
-  "https://picsum.photos/450/280?image=225", 
-  "https://picsum.photos/450/480?image=250", 
-  "https://picsum.photos/450/550?image=275", 
-  "https://picsum.photos/450/600?image=300", 
-  "https://picsum.photos/450/325?image=13" ,
-  "https://picsum.photos/450/450?image=26" ,
-  "https://picsum.photos/450/280?image=39" ,
-  "https://picsum.photos/450/540?image=52" ,
-  "https://picsum.photos/450/380?image=65" ,
-  "https://picsum.photos/450/300?image=78",
-  "https://picsum.photos/450/280?image=300" ,
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161", 
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161", 
-  "https://picsum.photos/450/400?image=175", 
-  "https://picsum.photos/450/300?image=200", 
-  "https://picsum.photos/450/280?image=225", 
-  "https://picsum.photos/450/480?image=250", 
-  "https://picsum.photos/450/550?image=275", 
-  "https://picsum.photos/450/600?image=300", 
-  "https://picsum.photos/450/325?image=13" ,
-  "https://picsum.photos/450/450?image=26" ,
-  "https://picsum.photos/450/280?image=39" ,
-  "https://picsum.photos/450/540?image=52" ,
-  "https://picsum.photos/450/380?image=65" ,
-  "https://picsum.photos/450/300?image=78",
-  "https://picsum.photos/450/280?image=300" ,
-  "https://picsum.photos/450/325?image=100" ,
-  "https://picsum.photos/450/540?image=400" ,
-  "https://picsum.photos/450/380?image=500" ,
-  "https://picsum.photos/450/300?image=600" ,
-  "https://picsum.photos/450/400?image=700" ,
-  "https://picsum.photos/450/300?image=800" ,
-  "https://picsum.photos/450/280?image=900" ,
-  "https://picsum.photos/450/480?image=925" ,
-  "https://picsum.photos/450/550?image=950" ,
-  "https://picsum.photos/450/600?image=1000",
-  "https://placekitten.com/450/280",
-  "https://picsum.photos/450/325?image=25" ,
-  "https://picsum.photos/450/450?image=200", 
-  "https://picsum.photos/450/450?image=50" ,
-  "https://picsum.photos/450/280?image=75" ,
-  "https://picsum.photos/450/540?image=100", 
-  "https://picsum.photos/450/380?image=125", 
-  "https://picsum.photos/450/300?image=161",       
-]
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  }
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  }
+  const [pinsList, setPinsList] = useState(['']);
+  const submitForm = () => {
 
-  return (
+    const showPins = () => {
+      const url = 'http://localhost/api/pins';
+      const body = {
+        name: name,
+        email: email,
+      }
+      const options = {
+        method: 'GET',
+        headers: new Headers({
+          'Content-type': 'application/json',
+        }),
+        mode: 'cors',
+        body: JSON.stringify(body)
+      };
+      fetch(url, options)
+        .then(response => {
+          if (response.status === 200) {
+            return response.json();
+          }
+          return Promise.reject(response.status);
+        })
+        .then(function (myJson) {
+          console.log('listado');
+          setPinsList(JSON.stringify(myJson));
+        })
+        .catch(error => console.log(error));
+    };
+    console.log(pinsList)
+    showPins();
 
-      
+    return (
     
-        urls.map((url) => 
-        <div className={styles.__home_post_item}>
-          <PinCard
-            name="Nombre del pin"
-            description="Un fantástico pin"
-            image_url={url}
-          />
-        </div>
-        )
-  )
-}
+      
+      <div>
+        <input type="text" value={name} onChange={handleChangeName} />
+        <input type="text" value={email} onChange={handleChangeEmail} />
+        
+      </div>
+    )
+  }    
+};
 
 export default Home;

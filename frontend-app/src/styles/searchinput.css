@@ -1,0 +1,22 @@
+.searchinput {
+    background-image: url(../img/search.png);
+      background-color: #EFEFEF;
+      background-repeat: no-repeat;
+      background-size: 17px;
+      background-position: 15px center;
+      font-size: 17px;
+      width: 1200px;
+      line-height: 48px;
+      border-radius: 35px;
+      border: none;
+}
+
+.searchinput:hover {
+    background-color: #E1E1E1;
+
+}
+.searchinput:focus {
+    outline: none;
+    background-image: none;
+    border: 5px solid #7FC1FF;
+}
