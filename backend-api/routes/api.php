@@ -21,8 +21,7 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
-    Route::get('users', 'UserController@all');
-
+    
 });
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +29,7 @@ Route::group([
 |--------------------------------------------------------------------------
 */
 
+Route::get('users', 'UserController@all');
 Route::get('users/{id}', 'UserController@getById');
 Route::get('users/email/{email}', 'UserController@getByEmail');
 Route::get('users/username/{username}', 'UserController@getByUsername');
