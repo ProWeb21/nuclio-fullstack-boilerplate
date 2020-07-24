@@ -58,7 +58,7 @@ class UserController extends Controller
         ]);
 
         $user->save();
-        return response()->json("Created", 201);
+        return response()->json("Created"  );
     }
 
     /**
