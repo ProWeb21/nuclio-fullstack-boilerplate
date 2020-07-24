@@ -33,8 +33,7 @@ class BoardController extends Controller
         $boardValidator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string','max:255'],
-            'user_id' => ['required', 'integer'],
-            'username' => ['required', 'string', 'max:255']
+            'user_id' => ['required', 'integer']
         ]);
 
         if($boardValidator->fails()) {
