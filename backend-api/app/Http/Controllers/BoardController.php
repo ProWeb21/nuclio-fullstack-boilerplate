@@ -34,8 +34,7 @@ class BoardController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string','max:255'],
             'user_id' => ['required', 'integer'],
-            'username' => ['required', 'string', 'max:255']
-        ]);
+            ]);
 
         if($boardValidator->fails()) {
             $errors = $boardValidator->errors()->getMessages();
